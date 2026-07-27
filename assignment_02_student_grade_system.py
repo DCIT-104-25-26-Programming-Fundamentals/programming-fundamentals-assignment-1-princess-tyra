@@ -45,3 +45,30 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def get_grade(n):
+    if n < 0 or n > 100:
+        return None
+    elif n >= 80:
+        return "A"
+    elif 70<=n<=79:
+        return "B"
+    elif 60<=n<=69:
+        return "C"
+    elif 50<=n<=59:
+        return "D"
+    else:
+        return "F"
+number = float (input("Enter score: "))
+final_grade=get_grade(number)
+if final_grade is None:
+    print("Invalid input, try again.")
+else:
+    if final_grade=="A":
+        print("Grade: A PERFECT'")
+    elif final_grade=="B":
+        print("GRADE: B ' GOOD'")
+    elif final_grade=="C":
+        print("GRADE: C 'AVERAGE'")
+    elif final_grade=="D":
+        print("GRADE: D 'BAD")
+    
