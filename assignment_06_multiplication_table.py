@@ -54,4 +54,64 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+# ============================================
+# PROGRAMMING FUNDAMENTALS - Assignment 6
+# Topic: Loops and Functions
+# Multiplication Table Generator
+# ============================================
 
+# Function for Part A
+def single_table():
+    print("PART A - Single Multiplication Table")
+
+    number = input("Enter a number: ")
+
+    # Check if the input is a positive integer
+    if not number.isdigit():
+        print("Error: Please enter a positive integer.")
+        return
+
+    number = int(number)
+
+    print("\nMultiplication Table for", number)
+    print("---------------------------")
+
+    for i in range(1, 13):
+        print(number, "x", i, "=", number * i)
+
+
+# Function for Part B
+def tables_to_n():
+    print("\nPART B - Multiplication Tables from 1 to N")
+
+    n = input("Enter a positive integer: ")
+
+    # Check if the input is a positive integer
+    if not n.isdigit():
+        print("Error: Please enter a positive integer.")
+        return
+
+    n = int(n)
+
+    if n <= 0:
+        print("Error: Please enter a positive integer greater than zero.")
+        return
+
+    for number in range(1, n + 1):
+        print("\nMultiplication Table for", number)
+        print("---------------------------")
+
+        for i in range(1, 13):
+            print(number, "x", i, "=", number * i)
+
+        print("---------------------------")
+
+
+# Main Program
+print("WELCOME TO THE MULTIPLICATION TABLE GENERATOR")
+print("=============================================")
+
+single_table()
+tables_to_n()
+
+print("\nThank you for using the Multiplication Table Generator!")
