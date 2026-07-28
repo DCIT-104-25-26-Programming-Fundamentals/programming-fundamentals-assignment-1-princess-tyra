@@ -45,6 +45,9 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+from ast import While
+
+
 def get_grade(n):
     if n < 0 or n > 100:
         return None
@@ -58,17 +61,35 @@ def get_grade(n):
         return "D"
     else:
         return "F"
-number = float (input("Enter score: "))
+
+while True:
+        try:
+            number = float(input("Enter score: "))
+            break
+        except ValueError:
+            print("Invalid input, try again.")
+            continue
+
+        if number < 0 or number > 100:
+            print("Invalid input, try again.")
+            continue
+        else:
+            break
+        
 final_grade=get_grade(number)
-if final_grade is None:
-    print("Invalid input, try again.")
+
+
+if final_grade is None:   
+            print("Invalid input, try again.")
 else:
-    if final_grade=="A":
-        print("Grade: A PERFECT'")
-    elif final_grade=="B":
-        print("GRADE: B ' GOOD'")
-    elif final_grade=="C":
-        print("GRADE: C 'AVERAGE'")
-    elif final_grade=="D":
-        print("GRADE: D 'BAD")
+            if final_grade=="A":
+                print("Grade: A 'PERFECT'")
+            elif final_grade=="B":
+                print("GRADE: B 'GOOD'")
+            elif final_grade=="C":
+                print("GRADE: C 'AVERAGE'")
+            elif final_grade=="D":
+                print("GRADE: D 'BAD'")
+            else:
+                print("GRADE: F 'FAIL'")
     
