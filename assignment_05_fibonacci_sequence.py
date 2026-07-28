@@ -48,37 +48,52 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
-
-def print_fibonacci sequence():
-n = int(input("How many terms? "))
-if n<=0:
-    print("Error: please enter a positive integer.")
-else:
-    a=0
-    b=1
-    print("Fibonacci sequence:", end="")
-    for i in range(n):
-        print(a, end="")
-        next_num = a + b
-        a = b
-        b = next_num
-        print()
-        def check_fibonacci_number():
-            target = int(input("Enter a number to check:" )
-        a , b, = 0,1
-        while a < target:
-        a ,b,= b, a+b
-        if a == target:
-        print(f"{target} is a Fibonacci number,")
-        else:
-        print(f"{target} is NOT a Fibonacci number. ")
-        print("--partA--")
-        print_fibonacci_sequence
-        print("\n--part B--")
-        check_fibonacci_number()
-
+def fbs(n):
+    if n <= 0:
+        print("Invalid input, try again.")
+    else:
+        arrangement=[]
+        a = 0
+        b = 1
+        for i in range(n):
+                arrangement.append(a)
+                a = b
+                b = a+b
+    print("Fibonacci sequence: ", " ".join(map(str,arrangement)))
+            
+def cfbs(number):
+        if number<0:
+               print("try again.")
+               return False
         
+        a=0
+        b=1
+        while a < number:
+                a=b
+                b=a+b    
+                if a == number:
+                    return True
+                else:
+                    return False
+        
+           
+try:        
+    Number=int(input("How many terms? \n"))
+    fbs(Number)
+    print  ("fibonacci sequence of first", Number,"terms")
+except ValueError:
+    print  ("try again.")
 
+print(" "*40)
+try:
+    CFB=int(input("Enter number: "))
+    if cfbs(CFB):
+        print(CFB, "is a fibonacci number.")
+    else:
+        print(CFB, "is NOT a fibonacci number.")
+except ValueError:
+     print("try again.")
+        
 
 
 
