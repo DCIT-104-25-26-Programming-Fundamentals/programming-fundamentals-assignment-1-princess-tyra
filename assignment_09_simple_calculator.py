@@ -117,45 +117,51 @@ def menu():
 
     menu()
 
-    choice = input("Select an operation (1-7): ")
+choice = input("Select an operation (1-7): ")
 
-    if choice == "7":
-        print("Goodbye!")
-        break
+    
+        
+   
 
-    elif choice == "1":
+if choice == "1":
         first = float(input("Enter first number: "))
         second = float(input("Enter second number: "))
         answer = addition(first, second)
         print("Result:", first, "+", second, "=", answer)
 
-    elif choice == "2":
+elif choice == "2":
         first = float(input("Enter first number: "))
         second = float(input("Enter second number: "))
         answer = subtraction(first, second)
         print("Result:", first, "-", second, "=", answer)
 
-    elif choice == "3":
+elif choice == "3":
         first = float(input("Enter first number: "))
         second = float(input("Enter second number: "))
         answer = multiplication(first, second)
         print("Result:", first, "*", second, "=", answer)
 
-    elif choice == "4":
+elif choice == "4":
         first = float(input("Enter first number: "))
         second = float(input("Enter second number: "))
         division(first, second)
 
-    elif choice == "5":
+elif choice == "5":
         first = float(input("Enter first number: "))
         second = float(input("Enter second number: "))
         modulus(first, second)
 
-    elif choice == "6":
+elif choice == "6":
         first = float(input("Enter first number: "))
         second = float(input("Enter second number: "))
         answer = exponentiation(first, second)
         print("Result:", first, "**", second, "=", answer)
 
-    else:
+elif choice == "7":
+            while True:
+                print("Goodbye!")
+                break
+else:
         print("Error: Invalid choice. Please enter a number from 1 to 7.")
+        if __name__ == "__main__":
+            menu()
