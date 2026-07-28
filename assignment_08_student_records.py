@@ -90,7 +90,7 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
-def add_student():
+def add_student(students):
     name = input("Student name: ")
     student_id = input("Student ID: ")
 
@@ -102,19 +102,19 @@ def add_student():
         score = float(input("Enter score " + str(i + 1) + ": "))
         scores.append(score)
 
-    student = {
+    students = {
         "name": name,
         "id": student_id,
         "scores": scores
     }
 
-    students.append(student)
+    students.append(students)
 
     print('Student "' + name + '" added successfully.')
 
 
 
-def display_students():
+def display_students(students):
 
     if len(students) == 0:
         print("No students have been added yet.")
@@ -142,7 +142,7 @@ def display_students():
 
 
 
-def calculate_average():
+def calculate_average(students):
 
     student_id = input("Enter student ID: ")
 
@@ -174,25 +174,27 @@ def show_menu():
     print("4. Quit")
 
 
+def main():
+    students = []
 
-while True:
+    while True:
 
-    show_menu()
+        show_menu()
 
-    choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-4): ")
 
-    if choice == "1":
-        add_student()
+        if choice == "1":
+            add_student(students)
 
-    elif choice == "2":
-        display_students()
+        elif choice == "2":
+            display_students(students)
 
-    elif choice == "3":
-        calculate_average()
+        elif choice == "3":
+            calculate_average(students)
 
-    elif choice == "4":
-        print("Goodbye!")
-        break
+        elif choice == "4":
+            print("Goodbye!")
+            break
 
-    else:
-        print("Error: Invalid choice. Please enter a number from 1 to 4.")
+        else:
+            print("Error: Invalid choice. Please enter a number from 1 to 4.")
